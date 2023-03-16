@@ -7,7 +7,7 @@ In this project we will be looking at a dataset of customer data from ficticious
 
 
 # data dictionary
-<img src=”data_dictionary.png”>
+<img src=”https://github.com/Adam-Harris87/classification-project/blob/main/data_dictionary.png”>
 
 
 
