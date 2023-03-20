@@ -103,7 +103,7 @@ def get_bar_tech_support():
     support service and customers who do not.
     '''
     # create the bar chart
-    sns.barplot(data=internet,
+    sns.barplot(data=train,
                 x='tech_support_yes',
                 y='churn',
                 ci=False)
@@ -116,8 +116,51 @@ def get_bar_tech_support():
     plt.title('Customers With Tech Support Have a Lower Churn Rate\n\
     Than Customers Without Tech Support')
     # create a line showing the overall average churn rate
-    plt.axhline(internet.churn.mean(), ls='--', color='black', label='Total Average Churn')
+    plt.axhline(train.churn.mean(), ls='--', color='black', label='Total Average Churn')
     # add a legend describing the average churn rate line
     plt.legend()
     # show the chart
     plt.show()
+
+def get_ttest_tech_support():
+    '''
+    This function will perform a t-test on the sample of customers who have tech support
+    compared to the churn rate of all customers.
+    '''
+    # set the alpha score
+    alpha = 0.05
+    # get the churn rate of customer subset that we are looking at
+    tech_churn = train[train['tech_support_yes'] == 1].churn
+    # run the t-test on our sample compared to the total churn rate
+    t_stat, p = stats.ttest_ind(tech_churn, 
+                                train.churn, equal_var=False)
+    # a t-stat < 0 and p / 2 < alpha will indicate that customers with tech support service
+    # have a lower churn rate than customers without it
+    print(f'T_stat is less than 0: {t_stat < 0}, T_stat = {t_stat:.6}')
+    print(f'p-value / 2 is less than alpha: {p / 2 < alpha}, p-value / 2 = {p/2:.6}')
+
+def get_bar_dependents():
+    '''
+    This function will display a visualization for customer churn rate based on if
+    the customer has dependents or not.
+    '''
+    # Does a customer having dependents change the rate of customer churn?
+    # create the bar graph
+    sns.barplot(data=train,
+                x='dependents',
+                y='churn',
+                ci=False)
+    # change the xticks to something understandable
+    plt.xticks(ticks=(0,1), labels=('No Dependents', 'Has Dependents'))
+    # change the axis labels
+    plt.xlabel('Customer Dependents')
+    plt.ylabel('Customer Churn Rate')
+    # create a title for the graph
+    plt.title('Customers With Dependents Have a Lower Churn Rate')
+    # create a line showing the total average churn rate
+    plt.axhline(train.churn.mean(), ls='--', color='black', label='Total Average Churn')
+    # create a legend explaining the avg churn rate line
+    plt.legend()
+    # show the graph
+    plt.show()
+
