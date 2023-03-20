@@ -95,7 +95,8 @@ def wrangle():
     '''
     # retrieve telco data, and clean the data
     telco = prep_telco(acquire.get_telco_data())
-    # split the data for use in machine learning models
-    train, validate, test = split_data(telco)
-    # return the split DataFrames
-    return train, validate, test
+    # # split the data for use in machine learning models
+    # train, validate, test = split_data(telco)
+    # # return the split DataFrames
+    # return train, validate, test
+    return telco
