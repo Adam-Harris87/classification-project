@@ -60,6 +60,12 @@ def prep_telco(telco_df):
         new_names.append(col.replace(' ', '_').replace('(','').replace(')', '').lower())
     telco_df.columns = new_names
     
+
+    # create a column identifying customers with neither online security or
+    # online backup services
+    telco_df['neither_security_or_backup'] = ((telco_df.online_backup == 'No') 
+                                   & (telco_df.online_security == 'No'))
+
     # return the clean DataFrame
     return telco_df
 
