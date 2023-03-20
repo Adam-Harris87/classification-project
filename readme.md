@@ -1,11 +1,15 @@
-# project description with goals
+# Project Description
 
-In this project we will be looking at a dataset of customer data from ficticious telecom company (Telco). We will attempt to predict the probablity that any given customer will churn (end their service subscriptions with Telco) based on factors such as monthly charges, billing type, gender and payment method. The data used in this project is static and will not be used for predictions on future customers.
+In this project we will be looking at a dataset of customer data from ficticious telecom company (Telco). The data used in this project is static and will not be used for predictions on future customers.
+
+# Project Goals
+
+We will attempt to predict the probablity that any given customer will churn (end their service subscriptions with Telco) based on factors such as monthly charges, billing type, gender and payment method. 
 
 There are a number of fields in our dataset which may have an effect upon customer churn rate which we will be unable to affect such as a customer's gender, dependents or age. These may be factors to consider for focusing marketing efforts in attracting new customers, but our focus will be on how to keep our existing customers from churning. Therefore we will be looking at services the company can provide or impove which may be a factor in customer churn rate.
 
 
-# initial hypotheses and/or questions you have of the data, ideas
+# Initial hypotheses and/or questions you have of the data, ideas
 
 Do customers with both phone services and internet service churn less than average?
 Do customers churn less with online security and online backup services than customers without?
@@ -18,11 +22,11 @@ Do customers with both streaming tv and streaming movies churn at a lower rate t
 Is there a difference in churn among genders depending on if they have streaming tv or movie streaming?
 
 
-# data dictionary
+# Data dictionary
 ![alt text](https://github.com/Adam-Harris87/classification-project/blob/main/data_dictionary.png)
 
 
-# project planning (lay out your process through the data science pipeline)
+# Project planning (lay out your process through the data science pipeline)
 
 Planning - The project planning will be laid out in this readme
 
@@ -39,7 +43,7 @@ Modeling - We will input our 4-5 most impactful fields into various machine lear
 Delivery - Our delivery method will be an interactive Jupyter notebook containing methodology notes including useful exploration visualisations and recall score metrics from our highest performing models. There will also be a verbal presentation of the findings of this project.
 
 
-# instructions or an explanation of how someone else can reproduce your project and findings (What would someone need to be able to recreate your project on their own?)
+# Instructions or an explanation of how someone else can reproduce your project and findings (What would someone need to be able to recreate your project on their own?)
 
 In order to run the files in this project, the user will need to connect to the Codeup SQL database, in order to do this the user will need to have a file named 'env.py' in the same file directory as the project files. This env.py file will need to contain: 
 
@@ -48,4 +52,4 @@ password = 'your_password_for_the_codeup_database'
 host = 'data.codeup.com'
 
 
-# key findings, recommendations, and takeaways from your project.
+# Key findings, recommendations, and takeaways from your project.
