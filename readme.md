@@ -2,6 +2,7 @@
 
 In this project we will be looking at a dataset of customer data from ficticious telecom company (Telco). The data used in this project is static and will not be used for predictions on future customers.
 
+
 # Project Goals
 
 We will attempt to predict the probablity that any given customer will churn (end their service subscriptions with Telco) based on factors such as monthly charges, billing type, gender and payment method. 
@@ -37,8 +38,8 @@ Preparation - The data will have duplicate columns due to joining tables in SQL,
 Exploration - We will explore the data using various graphs, charts and visualizations in order to see if we can visually determine fields which will have a large impact upon predicting churn rate. We will then perform hypothesis testing in order to check if our visual determination of impactful fields is statistically accurate. We will finally choose a number of fields that have the most correlation to our churn target to use with our machine learning models.
 
 Modeling - We will input our 4-5 most impactful fields into various machine learning algorlithms, and check the accuracy and recall scores of each model. We will consider a customer churn to be a positive condition of our prediction models. 
-	
-	Since we are looking to prevent customer churn we will be looking to predict as many true positive conditions as possible regardless of false positives, therefore we will be most concerned with the model's recall rate.
+
+- Since we are looking to prevent customer churn we will be looking to predict as many true positive conditions as possible regardless of false positives, therefore we will be most concerned with the model's recall rate.
 
 Delivery - Our delivery method will be an interactive Jupyter notebook containing methodology notes including useful exploration visualisations and recall score metrics from our highest performing models. There will also be a verbal presentation of the findings of this project.
 
@@ -47,9 +48,16 @@ Delivery - Our delivery method will be an interactive Jupyter notebook containin
 
 In order to run the files in this project, the user will need to connect to the Codeup SQL database, in order to do this the user will need to have a file named 'env.py' in the same file directory as the project files. This env.py file will need to contain: 
 
-user = 'your_username_to_connect_to_the_codeup_database'
-password = 'your_password_for_the_codeup_database'
-host = 'data.codeup.com'
+- user = 'your_username_to_connect_to_the_codeup_database'
+- password = 'your_password_for_the_codeup_database'
+- host = 'data.codeup.com'
+
+All project files will need to be located together in the same directory. Run the final_report file to get the finished report.
 
 
 # Key findings, recommendations, and takeaways from your project.
+
+- About 1/4 of all customers will churn (26.5%)
+- Online security and backup features are drivers of customer churn, along with device protection and tech support. 
+ - These may be good incentives to offer customers in order to sway them not to churn.
+- We were able to create a random forest model that predicted customer churn with a recall rate around 55%.
