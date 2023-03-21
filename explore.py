@@ -87,11 +87,13 @@ def get_ttest_neither_security_or_backup():
     '''
     # set the alpha score
     alpha = 0.05
-    # get the churn rate of customer subset that we are looking at
-    nsob_churn = train[train['neither_security_or_backup']].churn
-    # run the t-test on our sample compared to the total churn rate
-    t_stat, p = stats.ttest_ind(nsob_churn, 
-                                train.churn, equal_var=False)
+    # get a subset of customers who have internet service
+    internet = train[train.internet_service_type_none == 0]
+    # get the churn rate of customer subsets that we are looking at
+    mask = ((internet.online_backup == 'No') & (internet.online_security == 'No'))
+    # run the t-test on our 2 subsets
+    t_stat, p = stats.ttest_ind(internet[mask].churn, 
+                                internet[~mask].churn, equal_var=False)
     # a t-stat > 0 and p / 2 < alpha will indicate that having neither security
     # or backup services has a higher churn rate than customers with at least one service
     print(f'T_stat is greater than 0: {t_stat > 0}, T_stat = {t_stat:.6}')
