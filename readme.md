@@ -42,7 +42,7 @@ Modeling - We will input our 4-5 most impactful fields into various machine lear
 - Since we are looking to prevent customer churn we will be looking to predict as many true positive conditions as possible regardless of false positives, therefore we will be most concerned with the model's recall rate.
 
 Delivery - Our delivery method will be an interactive Jupyter notebook containing methodology notes including useful exploration visualisations and recall score metrics from our highest performing models. There will also be a verbal presentation of the findings of this project.
-
+ 
 
 # Instructions or an explanation of how someone else can reproduce your project and findings (What would someone need to be able to recreate your project on their own?)
 
